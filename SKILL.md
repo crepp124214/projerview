@@ -1,11 +1,6 @@
 ---
 name: projerview
-description: >
-  分析项目代码生成面试手册、出题、模拟面试。面向计算机应届生，帮助深度理解简历项目并自信应对面试。
-  当用户提到"projerview"、"面试准备"、"模拟面试"、"项目面试"、"面试题库"时使用此技能。
-metadata:
-  author: projerview
-  version: "1.0.0"
+description: 分析项目代码生成面试手册、出题、模拟面试。面向计算机应届生，帮助深度理解简历项目并自信应对面试。当用户提到 projerview、面试准备、模拟面试、项目面试、面试题库时使用此技能。
 ---
 
 # projerview

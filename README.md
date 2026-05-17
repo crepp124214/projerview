@@ -1,0 +1,152 @@
+# projerview
+
+帮助计算机应届生深度理解简历项目、生成面试准备材料、进行模拟面试的 Agent Skill。
+
+遵循 [Agent Skills 规范](https://agentskills.io)，支持 Claude Code、OpenAI Codex、Trae 等所有兼容客户端。
+
+## 解决什么问题
+
+简历上的项目不是自己做的，面试时心虚？不知道面试官会怎么深挖？不知道怎么用面试官能听懂的方式讲解项目？
+
+projerview 通过三阶段闭环解决这些问题：
+
+1. **分析你的项目代码** → 生成面试手册，让你真正理解项目
+2. **生成面试题库** → 提前预习可能被问到的问题
+3. **模拟面试** → 实战练习，逐题评分、追问、反馈
+
+## 安装
+
+### 一行命令安装（推荐）
+
+```bash
+npx skills add crepp124214/projerview
+```
+
+> 适用于所有兼容 Agent Skills 规范的客户端。
+
+### 按平台安装
+
+#### Claude Code
+
+```bash
+npx skills add crepp124214/projerview
+```
+
+安装后在项目目录中输入 `projerview` 即可启动。
+
+#### OpenAI Codex CLI
+
+```bash
+npx skills add crepp124214/projerview
+```
+
+安装后在项目目录中输入 `projerview` 即可启动。
+
+#### Trae
+
+在 Trae 中打开设置 → Skills → 搜索 `projerview`，点击安装。
+
+或使用命令行：
+
+```bash
+npx skills add crepp124214/projerview
+```
+
+### 手动安装
+
+如果 `npx skills add` 不可用，可以手动复制：
+
+```bash
+git clone https://github.com/crepp124214/projerview.git
+# 将 projerview/ 目录复制到你的 Skills 目录下
+```
+
+### 验证安装
+
+对 AI 编程助手说 `projerview`，如果 Skill 正常响应预检流程，说明安装成功。
+
+## 快速开始
+
+在你的项目目录下，对 AI 编程助手说：
+
+```
+projerview
+```
+
+Skill 会自动检测进度，从你上次停下的地方继续。首次使用会从项目分析开始。
+
+## 使用方式
+
+| 命令 | 说明 |
+|------|------|
+| `projerview` | 自动检测进度，从断点继续 |
+| `projerview analyze` | 重新分析项目代码，生成面试手册 |
+| `projerview question-bank` | 重新生成面试题库 |
+| `projerview mock-interview` | 直接进入模拟面试 |
+| `面试准备` / `模拟面试` | 中文触发词 |
+
+## 三阶段流程
+
+### 阶段1：项目深度分析
+
+深度分析你的项目代码，生成面试手册 `.projerview/handbook.md`。
+
+分析维度：项目一句话介绍、项目概览、架构解析、核心模块详解、技术亮点、技术选型对比、难点与解决方案、可优化点。
+
+分析完成后会暂停让你审阅，确认无误后再继续。
+
+### 阶段2：题库生成
+
+基于面试手册，生成面试题库 `.projerview/question-bank.md`。
+
+核心题库 25-35 题，扩展题库不限。难度分层：⭐基础 ~15% / ⭐⭐中等 ~60% / ⭐⭐⭐进阶 ~25%。每道题附带口语化参考答案和常见追问。
+
+### 阶段3：模拟面试
+
+Skill 扮演面试官，逐题提问、评分、追问。三种模式：全量/专题/随机。评分维度：准确性(40%) + 深度(35%) + 表达(25%)。支持暂停保存进度，面试结束后生成评价报告。
+
+## 产出文件
+
+所有文件保存在项目目录下的 `.projerview/` 中，自动加入 `.gitignore`。
+
+## 安全与隐私
+
+- 自动过滤敏感信息（API Key、数据库连接串、密码等）
+- 面试材料自动加入 .gitignore
+- 如果项目涉及公司机密代码，建议在个人设备上使用，并注意 AI 平台的数据处理政策
+
+## 适用项目
+
+Python / Java / Node.js / Go / Rust / C# / Ruby 及其他主流项目。支持 Monorepo。
+
+## 常见问题
+
+**Q: 分析一个项目需要多长时间？**
+A: 小型项目约2-3分钟，中型约5-8分钟，大型可能10分钟以上。
+
+**Q: 支持多语言混合项目吗？**
+A: 支持。自动识别 Monorepo，分别分析前后端子项目。
+
+**Q: 题库会生成多少题？**
+A: 核心题库 25-35 题，扩展题库不限。全量面试约需 1-1.5 小时。
+
+**Q: 面试中途中断了怎么办？**
+A: 说"暂停"保存进度，下次运行 `projerview` 会自动检测并提示续面。
+
+## 版本日志
+
+### v1.0.0 (2026-05-17)
+- 初始版本
+- 三阶段流程：项目分析 → 题库生成 → 模拟面试
+- 遵循 Agent Skills 规范，支持 Claude Code / Codex / Trae
+
+## 文件结构
+
+```
+projerview/
+├── SKILL.md                  # Skill 入口（Agent Skills 规范）
+└── references/               # 阶段详细指令
+    ├── analyze.md            # 阶段1：项目深度分析
+    ├── question-bank.md      # 阶段2：题库生成
+    └── mock-interview.md     # 阶段3：模拟面试
+```

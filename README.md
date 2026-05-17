@@ -22,44 +22,59 @@ projerview 通过三阶段闭环解决这些问题：
 npx skills add crepp124214/projerview
 ```
 
-> 适用于所有兼容 Agent Skills 规范的客户端。
+> `npx skills add` 会自动检测你本地安装的 AI 编程工具（Claude Code、Cursor、Trae 等），一键同步配置到对应目录。
 
 ### 按平台安装
 
 #### Claude Code
 
 ```bash
+# 方式一：npx 一键安装（推荐）
 npx skills add crepp124214/projerview
+
+# 方式二：Claude Code 内置安装器
+$skill-installer crepp124214/projerview
+
+# 方式三：手动安装
+git clone https://github.com/crepp124214/projerview.git
+cp -r projerview ~/.claude/skills/projerview
 ```
 
-安装后在项目目录中输入 `projerview` 即可启动。
+安装后重启 Claude Code，输入 `/projerview` 即可启动。
 
-#### OpenAI Codex CLI
+#### OpenAI Codex
 
 ```bash
+# 方式一：npx 一键安装（推荐）
 npx skills add crepp124214/projerview
+
+# 方式二：手动安装
+git clone https://github.com/crepp124214/projerview.git
+cp -r projerview ~/.agents/skills/projerview
 ```
 
-安装后在项目目录中输入 `projerview` 即可启动。
+安装后重启 Codex，输入 `$projerview` 即可启动。
 
 #### Trae
 
-在 Trae 中打开设置 → Skills → 搜索 `projerview`，点击安装。
+```bash
+# 方式一：npx 一键安装（推荐）
+npx skills add crepp124214/projerview
 
-或使用命令行：
+# 方式二：手动安装
+git clone https://github.com/crepp124214/projerview.git
+# 将 projerview/ 目录复制到 .trae/skills/ 下
+```
+
+安装后在对话中输入 `projerview` 即可启动。
+
+#### Cursor / VS Code / 其他兼容客户端
 
 ```bash
 npx skills add crepp124214/projerview
 ```
 
-### 手动安装
-
-如果 `npx skills add` 不可用，可以手动复制：
-
-```bash
-git clone https://github.com/crepp124214/projerview.git
-# 将 projerview/ 目录复制到你的 Skills 目录下
-```
+或手动将 `projerview/` 目录复制到对应客户端的 Skills 目录下。
 
 ### 验证安装
 

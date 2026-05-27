@@ -132,6 +132,7 @@ bower_components
 | handbook.md 格式异常 | 提示"面试手册格式不完整，建议重新运行 analyze" |
 | question-bank.md 格式异常 | 提示"题库格式异常，建议重新运行 question-bank" |
 | fundamentals.md 缺失但 question-bank.md 存在 | 八股文题库未生成，八股文/混合模式不可用，提示用户重新运行 question-bank |
+| resume.md 不存在（阶段3项目类模式） | 提示用户先运行 analyze 生成简历版，或回退到题库模式 |
 | progress.json JSON 解析失败 | 提示用户文件损坏，建议删除后重新开始 |
 | progress.json.tmp 存在但 progress.json 不存在 | 尝试将 tmp 重命名为正式文件并继续 |
 | handbook.md 生成时间距今超过 7 天 | 提示用户手册可能过期，建议重新分析 |
